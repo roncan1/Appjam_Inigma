@@ -21,6 +21,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    static DataModel[] mindMapData, memoData;
+
     // 리스트를 감싸고 있는 레이아웃
     LinearLayout memoLayout, mindMapLayout;
     // 리스트 프레임 전환 레이아웃
@@ -81,6 +83,16 @@ public class MainActivity extends AppCompatActivity {
         mindAdapter = new ListItemAdapter();
 
         mindMapList.setAdapter(mindAdapter);
+
+        mindMapList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String title = (String) adapterView.getItemAtPosition(i);
+                Intent intent = new Intent(MainActivity.this, MindMapActivity.class);
+                intent.putExtra("title", title);
+                startActivity(intent);
+            }
+        });
     }
 
     void setDialog() {
@@ -120,8 +132,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (checkMemo.isChecked()) {
                     memoAdapter.addItem(new DataModel(etTitle.getText().toString(), etExplain.getText().toString()));
+                    memoData[memoAdapter.getCount()] = new DataModel(etTitle.getText().toString(), etExplain.getText().toString());
                 } else if (checkMind.isChecked()) {
                     mindAdapter.addItem(new DataModel(etTitle.getText().toString(), etExplain.getText().toString()));
+                    mindMapData[mindAdapter.getCount()] = new DataModel(etTitle.getText().toString(), etExplain.getText().toString());
                 }
                 memoList.setAdapter(memoAdapter);
                 mindMapList.setAdapter(mindAdapter);
@@ -134,6 +148,8 @@ public class MainActivity extends AppCompatActivity {
         mindMapLayout = (LinearLayout) findViewById(R.id.frameMain);
         btnMemo = (Button) findViewById(R.id.btnMemo);
         btnMain = (Button) findViewById(R.id.btnMainMap);
+        mindMapData = new DataModel[15];
+        memoData = new DataModel[15];
     }
 
 }
