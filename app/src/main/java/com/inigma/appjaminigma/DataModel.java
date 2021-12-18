@@ -5,7 +5,7 @@ public class DataModel {
     private String category; //카테고리
     private String explain; //설명
     String[] option = new String[12];
-    String optionValue;
+    String optionValue = null;
 
 
     public DataModel(String title, String explain) {
@@ -51,7 +51,12 @@ public class DataModel {
                 break;
             }
         }
-        return this.optionValue;
+
+        if (this.optionValue == null) {
+            return null;
+        } else {
+            return this.optionValue;
+        }
     }
 
     public void setExplain(String explain) {

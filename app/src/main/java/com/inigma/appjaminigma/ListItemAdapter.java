@@ -42,6 +42,7 @@ public class ListItemAdapter extends BaseAdapter {
         TextView TV_title = view.findViewById(R.id.TV_title);
         TextView TV_Explain = view.findViewById(R.id.TV_explain);
 
+        String title = listItem.getTitleName();
         TV_title.setText(listItem.getTitleName());
         TV_Explain.setText(listItem.getExplain());
 

@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void changeList() {
+
         btnMemo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.role_right_enter, R.anim.role_right_exit);
             }
         });
+
         btnMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,9 +93,11 @@ public class MainActivity extends AppCompatActivity {
         mindMapList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String title = (String) adapterView.getItemAtPosition(i);
+                TextView tv = (TextView) view.findViewById(R.id.TV_title);
+                String title = tv.getText().toString();
                 Intent intent = new Intent(MainActivity.this, MindMapActivity.class);
-                intent.putExtra("title", title);
+                intent.putExtra("title", String.valueOf(title));
+                intent.putExtra("num", i);
                 startActivity(intent);
             }
         });
