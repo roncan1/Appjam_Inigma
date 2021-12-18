@@ -58,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 memoLayout.setVisibility(View.VISIBLE);
                 mindMapLayout.setVisibility(View.GONE);
+
+                overridePendingTransition(R.anim.role_right_enter, R.anim.role_right_exit);
             }
         });
         btnMain.setOnClickListener(new View.OnClickListener() {
@@ -65,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 memoLayout.setVisibility(View.GONE);
                 mindMapLayout.setVisibility(View.VISIBLE);
+
+                overridePendingTransition(R.anim.role_left_enter, R.anim.role_left_exit);
             }
         });
     }
