@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="11"
-        android:background="#BCBCBC"
+        android:background="#ACC1DC"
         android:gravity="right"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,7 +31,7 @@
         android:layout_marginTop="1dp"
         android:layout_marginBottom="1dp"
         android:layout_weight="9"
-        android:background="#BCBCBC">
+        android:background="#ACC1DC">
 
     </LinearLayout>
 
@@ -39,7 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="11"
-        android:background="#BCBCBC"
+        android:background="#EAEFF6"
         android:orientation="horizontal">
 
         <Button
@@ -47,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:backgroundTint="#00ffffff"
+            android:backgroundTint="#ACC1DC"
             android:stateListAnimator="@null"
             android:text="MEMO"
             android:textSize="14dp" />
@@ -57,7 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:backgroundTint="#00ffffff"
+            android:backgroundTint="#ACC1DC"
             android:stateListAnimator="@null"
             android:text="MAIN MAP"
             android:textSize="14dp" />
@@ -90,7 +90,9 @@
                     <ListView
                         android:id="@+id/mindMapList"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        android:divider="@null"
+                        android:dividerHeight="0dp" />
                 </LinearLayout>
 
                 <LinearLayout
