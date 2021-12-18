@@ -15,4 +15,6 @@ public class MemoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_memo); //출
 
     }
+
+    
 }

@@ -10,6 +10,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -60,7 +62,16 @@ public class MainActivity extends AppCompatActivity {
                 memoLayout.setVisibility(View.VISIBLE);
                 mindMapLayout.setVisibility(View.GONE);
 
-                overridePendingTransition(R.anim.role_right_enter, R.anim.role_right_exit);
+                overridePendingTransition(R.anim.role_right_enter, R.anim.role_right_exit); //이동 구현하려했지만 실패
+
+                //memo->miniMap일 때 memo는 사라진다(pade_in_views)
+                Animation animInW = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pade_in_views);
+                view.startAnimation(animInW);
+                //view.clearAnimation();
+
+                //miniMap->memo일 때 memo는 나타난다(pade_out_views)
+                Animation animOutW = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pade_out_views);
+                view.startAnimation(animOutW);
             }
         });
 
@@ -70,7 +81,15 @@ public class MainActivity extends AppCompatActivity {
                 memoLayout.setVisibility(View.GONE);
                 mindMapLayout.setVisibility(View.VISIBLE);
 
-                overridePendingTransition(R.anim.role_left_enter, R.anim.role_left_exit);
+                overridePendingTransition(R.anim.role_left_enter, R.anim.role_left_exit); //이동 구현하려했지만 실패
+
+                //miniMap->memo일 때 miniMap은 pade_in_views
+                Animation animInM = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pade_in_views);
+                view.startAnimation(animInM);
+
+                //memo->miniMap일 때 miniMap은 pade_out_views
+                Animation animOutW = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pade_out_views);
+                view.startAnimation(animOutW);
             }
         });
     }

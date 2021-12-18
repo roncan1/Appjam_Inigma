@@ -6,6 +6,8 @@
         <entry key="app/src/main/res/drawable/corner_shape.xml" value="0.271875" />
         <entry key="app/src/main/res/drawable/corner_shape2.xml" value="0.22552083333333334" />
         <entry key="app/src/main/res/drawable/editexts_corner_radius.xml" value="0.271875" />
+        <entry key="app/src/main/res/drawable/pade_in_views.xml" value="0.22552083333333334" />
+        <entry key="app/src/main/res/drawable/pade_out_views.xml" value="0.22552083333333334" />
         <entry key="app/src/main/res/drawable/plus_corner_rounds.xml" value="0.22552083333333334" />
         <entry key="app/src/main/res/drawable/splashes_first_imgs.xml" value="0.271875" />
         <entry key="app/src/main/res/drawable/texts_round_colors.xml" value="0.22552083333333334" />
