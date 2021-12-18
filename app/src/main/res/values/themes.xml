@@ -15,7 +15,7 @@
     </style>
 
     <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
-        <item name="android:windowBackground">@mipmap/ic_haeyum_foreground</item>
+        <item name="android:windowBackground">@drawable/splashes_first_imgs</item>
     </style>
 
 </resources>
