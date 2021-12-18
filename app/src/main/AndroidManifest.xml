@@ -5,10 +5,10 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_haeyum"
-        android:label="@string/app_name"
+        android:label="헤윰"
         android:roundIcon="@mipmap/ic_haeyum_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppjamInigma">
+        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
         <activity
             android:name=".SplashActivity"
             android:theme="@style/SplashTheme" >

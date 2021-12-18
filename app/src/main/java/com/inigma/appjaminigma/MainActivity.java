@@ -8,6 +8,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.Window;
 import android.view.animation.Animation;
@@ -20,6 +21,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -59,19 +61,23 @@ public class MainActivity extends AppCompatActivity {
         btnMemo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                memoLayout.setVisibility(View.VISIBLE);
                 mindMapLayout.setVisibility(View.GONE);
 
                 overridePendingTransition(R.anim.role_right_enter, R.anim.role_right_exit); //이동 구현하려했지만 실패
 
-                //memo->miniMap일 때 memo는 사라진다(pade_in_views)
-                Animation animInW = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pade_in_views);
-                view.startAnimation(animInW);
                 //view.clearAnimation();
-
-                //miniMap->memo일 때 memo는 나타난다(pade_out_views)
                 Animation animOutW = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pade_out_views);
-                view.startAnimation(animOutW);
+                mindMapList.startAnimation(animOutW);
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        memoLayout.setVisibility(View.VISIBLE);
+                        Animation animInW = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pade_in_views);
+                        memoList.startAnimation(animInW);
+                    }
+                }, 150);
+
             }
         });
 
@@ -79,17 +85,21 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 memoLayout.setVisibility(View.GONE);
-                mindMapLayout.setVisibility(View.VISIBLE);
 
                 overridePendingTransition(R.anim.role_left_enter, R.anim.role_left_exit); //이동 구현하려했지만 실패
 
-                //miniMap->memo일 때 miniMap은 pade_in_views
-                Animation animInM = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pade_in_views);
-                view.startAnimation(animInM);
 
-                //memo->miniMap일 때 miniMap은 pade_out_views
+                //view.clearAnimation();
                 Animation animOutW = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pade_out_views);
-                view.startAnimation(animOutW);
+                memoList.startAnimation(animOutW);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        mindMapLayout.setVisibility(View.VISIBLE);
+                        Animation animInW = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pade_in_views);
+                        mindMapList.startAnimation(animInW);
+                    }
+                }, 150);
             }
         });
     }
@@ -100,6 +110,18 @@ public class MainActivity extends AppCompatActivity {
         memoAdapter = new ListItemAdapter();
 
         memoList.setAdapter(memoAdapter);
+
+        memoList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                TextView tv = (TextView) view.findViewById(R.id.TV_title);
+                String title = tv.getText().toString();
+                Intent intent = new Intent(MainActivity.this, MemoActivity.class);
+                intent.putExtra("title", String.valueOf(title));
+                intent.putExtra("num", i);
+                startActivity(intent);
+            }
+        });
     }
 
     void setMindMapDataList() {
@@ -136,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void showCustumDialog(){
+    public void showCustumDialog() {
         dialog.show(); // 다이얼로그 띄우기
         checkMemo = (CheckBox) dialog.findViewById(R.id.checkMemo);
         checkMind = (CheckBox) dialog.findViewById(R.id.checkMind);
@@ -170,13 +192,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     void init() {
         memoLayout = (LinearLayout) findViewById(R.id.frameMemo);
         mindMapLayout = (LinearLayout) findViewById(R.id.frameMain);
         btnMemo = (Button) findViewById(R.id.btnMemo);
         btnMain = (Button) findViewById(R.id.btnMainMap);
-        mindMapData = new DataModel[15];
-        memoData = new DataModel[15];
+        mindMapData = new DataModel[12];
+        memoData = new DataModel[12];
+
     }
 
 }

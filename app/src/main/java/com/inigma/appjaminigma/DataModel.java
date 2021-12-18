@@ -6,7 +6,15 @@ public class DataModel {
     private String explain; //설명
     String[] option = new String[12];
     String optionValue = null;
+    String memo = "메모할 내용을 입력하세요";
 
+    public void setMemo(String memo) {
+        this.memo = memo;
+    }
+
+    String getMemo() {
+        return this.memo;
+    }
 
     public DataModel(String title, String explain) {
         this.titleName = title;

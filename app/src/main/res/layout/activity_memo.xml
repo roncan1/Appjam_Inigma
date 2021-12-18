@@ -23,7 +23,7 @@
             android:background="@drawable/backbtn"/>
 
         <TextView
-            android:id="@+id/TV_title"
+            android:id="@+id/TV_title1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="사양"
@@ -51,6 +51,7 @@
             app:layout_constraintVertical_bias="0.124" />
 
         <TextView
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="제목이름"
@@ -63,6 +64,7 @@
             app:layout_constraintVertical_bias="0.17" />
 
         <EditText
+            android:id="@+id/et_memo"
             android:layout_width="370dp"
             android:layout_height="200dp"
             android:background="@drawable/editexts_corner_radius"

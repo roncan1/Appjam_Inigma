@@ -132,6 +132,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/view3" />
 
                 <FrameLayout
+                    android:id="@+id/frameLayout3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -139,7 +140,7 @@
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="@+id/view8"
                     app:layout_constraintTop_toBottomOf="@+id/view8"
-                    app:layout_constraintVertical_bias="0.0" >
+                    app:layout_constraintVertical_bias="0.0">
 
                     <Button
                         android:id="@+id/btn_option1"
@@ -148,16 +149,23 @@
                         android:background="@drawable/corner_shape2"
                         android:textColor="#ACC1DC"
                         android:textSize="22dp"
-                        android:textStyle="bold"
-                        />
+                        android:textStyle="bold" />
 
                     <EditText
                         android:id="@+id/ET_option1"
-                        android:layout_width="wrap_content"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:textColor="#ACC1DC"
                         android:textSize="22dp"
                         android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_add_opt1"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/corner_shape3"
+                        android:drawableEnd="@drawable/addmind" />
 
                 </FrameLayout>
 
@@ -184,6 +192,26 @@
                     app:layout_constraintTop_toBottomOf="@+id/view3" />
 
                 <View
+                    android:id="@+id/view_first_a"
+                    android:layout_width="4dp"
+                    android:layout_height="50dp"
+                    android:background="#ACC1DC"
+                    app:layout_constraintEnd_toEndOf="@+id/frameLayout3"
+                    app:layout_constraintHorizontal_bias="0.2"
+                    app:layout_constraintStart_toStartOf="@+id/frameLayout3"
+                    app:layout_constraintTop_toBottomOf="@+id/frameLayout3" />
+
+                <View
+                    android:id="@+id/view_first_b"
+                    android:layout_width="4dp"
+                    android:layout_height="150dp"
+                    android:background="#ACC1DC"
+                    app:layout_constraintEnd_toEndOf="@+id/frameLayout3"
+                    app:layout_constraintHorizontal_bias="0.8"
+                    app:layout_constraintStart_toStartOf="@+id/frameLayout3"
+                    app:layout_constraintTop_toBottomOf="@+id/frameLayout3" />
+
+                <View
                     android:id="@+id/view9"
                     android:layout_width="4dp"
                     android:layout_height="25dp"
@@ -192,7 +220,68 @@
                     app:layout_constraintStart_toEndOf="@+id/view7"
                     app:layout_constraintTop_toBottomOf="@+id/view3" />
 
+                <View
+                    android:id="@+id/view_second_a"
+                    android:layout_width="4dp"
+                    android:layout_height="50dp"
+                    android:background="#ACC1DC"
+                    app:layout_constraintEnd_toEndOf="@+id/frameLayout4"
+                    app:layout_constraintHorizontal_bias="0.2"
+                    app:layout_constraintStart_toStartOf="@+id/frameLayout4"
+                    app:layout_constraintTop_toBottomOf="@+id/frameLayout4" />
+
+                <View
+                    android:id="@+id/view_second_b"
+                    android:layout_width="4dp"
+                    android:layout_height="150dp"
+                    android:background="#ACC1DC"
+                    app:layout_constraintEnd_toEndOf="@+id/frameLayout4"
+                    app:layout_constraintHorizontal_bias="0.8"
+                    app:layout_constraintStart_toStartOf="@+id/frameLayout4"
+                    app:layout_constraintTop_toBottomOf="@+id/frameLayout4" />
+
+                <View
+                    android:id="@+id/view_third_a"
+                    android:layout_width="4dp"
+                    android:layout_height="50dp"
+                    android:background="#ACC1DC"
+                    app:layout_constraintEnd_toEndOf="@+id/frameLayout9"
+                    app:layout_constraintHorizontal_bias="0.2"
+                    app:layout_constraintStart_toStartOf="@+id/frameLayout9"
+                    app:layout_constraintTop_toBottomOf="@+id/frameLayout9" />
+
+                <View
+                    android:id="@+id/view_third_b"
+                    android:layout_width="4dp"
+                    android:layout_height="150dp"
+                    android:background="#ACC1DC"
+                    app:layout_constraintEnd_toEndOf="@+id/frameLayout9"
+                    app:layout_constraintHorizontal_bias="0.8"
+                    app:layout_constraintStart_toStartOf="@+id/frameLayout9"
+                    app:layout_constraintTop_toBottomOf="@+id/frameLayout9" />
+
+                <View
+                    android:id="@+id/view_four_a"
+                    android:layout_width="4dp"
+                    android:layout_height="50dp"
+                    android:background="#ACC1DC"
+                    app:layout_constraintEnd_toEndOf="@+id/abc"
+                    app:layout_constraintHorizontal_bias="0.2"
+                    app:layout_constraintStart_toStartOf="@+id/abc"
+                    app:layout_constraintTop_toBottomOf="@+id/abc" />
+
+                <View
+                    android:id="@+id/view_four_b"
+                    android:layout_width="4dp"
+                    android:layout_height="150dp"
+                    android:background="#ACC1DC"
+                    app:layout_constraintEnd_toEndOf="@+id/abc"
+                    app:layout_constraintHorizontal_bias="0.8"
+                    app:layout_constraintStart_toStartOf="@+id/abc"
+                    app:layout_constraintTop_toBottomOf="@+id/abc" />
+
                 <FrameLayout
+                    android:id="@+id/frameLayout4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -200,7 +289,7 @@
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="@+id/view4"
                     app:layout_constraintTop_toBottomOf="@+id/view4"
-                    app:layout_constraintVertical_bias="0.0" >
+                    app:layout_constraintVertical_bias="0.0">
 
                     <Button
                         android:id="@+id/btn_option2"
@@ -213,15 +302,23 @@
 
                     <EditText
                         android:id="@+id/ET_option2"
-                        android:layout_width="wrap_content"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:textColor="#ACC1DC"
                         android:textSize="22dp"
                         android:textStyle="bold" />
 
+                    <Button
+                        android:id="@+id/btn_add_opt2"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/corner_shape3"
+                        android:drawableEnd="@drawable/addmind" />
                 </FrameLayout>
 
                 <FrameLayout
+                    android:id="@+id/frameLayout9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -229,7 +326,7 @@
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="@+id/view5"
                     app:layout_constraintTop_toBottomOf="@+id/view5"
-                    app:layout_constraintVertical_bias="0.0" >
+                    app:layout_constraintVertical_bias="0.0">
 
                     <Button
                         android:id="@+id/btn_option3"
@@ -242,15 +339,23 @@
 
                     <EditText
                         android:id="@+id/ET_option3"
-                        android:layout_width="wrap_content"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:textColor="#ACC1DC"
                         android:textSize="22dp"
                         android:textStyle="bold" />
 
+                    <Button
+                        android:id="@+id/btn_add_opt3"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/corner_shape3"
+                        android:drawableEnd="@drawable/addmind" />
                 </FrameLayout>
 
                 <FrameLayout
+                    android:id="@+id/abc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -258,7 +363,7 @@
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="@+id/view9"
                     app:layout_constraintTop_toBottomOf="@+id/view9"
-                    app:layout_constraintVertical_bias="0.0" >
+                    app:layout_constraintVertical_bias="0.0">
 
                     <Button
                         android:id="@+id/btn_option4"
@@ -271,12 +376,289 @@
 
                     <EditText
                         android:id="@+id/ET_option4"
-                        android:layout_width="wrap_content"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:textColor="#ACC1DC"
                         android:textSize="22dp"
                         android:textStyle="bold" />
 
+                    <Button
+                        android:id="@+id/btn_add_opt4"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/corner_shape3"
+                        android:drawableEnd="@drawable/addmind" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/frameLayout7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="@+id/view_second_a"
+                    app:layout_constraintStart_toStartOf="@+id/view_second_a"
+                    app:layout_constraintTop_toBottomOf="@+id/view_second_a">
+
+                    <Button
+                        android:id="@+id/btn_option7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/corner_shape2"
+                        android:textColor="#ACC1DC"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/ET_option7"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#ACC1DC"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_add_opt7"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/corner_shape3"
+                        android:drawableEnd="@drawable/addmind" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/frameLayout5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:layout_editor_absoluteY="610dp"
+                    app:layout_constraintEnd_toEndOf="@+id/view_third_b"
+                    app:layout_constraintStart_toEndOf="@+id/view_third_b"
+                    app:layout_constraintTop_toBottomOf="@+id/view_third_b">
+
+                    <Button
+                        android:id="@+id/btn_option10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/corner_shape2"
+                        android:textColor="#ACC1DC"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/ET_option10"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#ACC1DC"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_add_opt10"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/corner_shape3"
+                        android:drawableEnd="@drawable/addmind" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="@+id/view_four_b"
+                    app:layout_constraintStart_toEndOf="@+id/view_four_b"
+                    app:layout_constraintTop_toBottomOf="@+id/view_four_b">
+
+                    <Button
+                        android:id="@+id/btn_option12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/corner_shape2"
+                        android:textColor="#ACC1DC"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/ET_option12"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#ACC1DC"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_add_opt12"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/corner_shape3"
+                        android:drawableEnd="@drawable/addmind" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="@+id/view_four_a"
+                    app:layout_constraintStart_toEndOf="@+id/view_four_a"
+                    app:layout_constraintTop_toBottomOf="@+id/view_four_a">
+
+                    <Button
+                        android:id="@+id/btn_option11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/corner_shape2"
+                        android:textColor="#ACC1DC"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/ET_option11"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#ACC1DC"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_add_opt11"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/corner_shape3"
+                        android:drawableEnd="@drawable/addmind" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="@+id/view_second_b"
+                    app:layout_constraintStart_toEndOf="@+id/frameLayout7"
+                    app:layout_constraintTop_toBottomOf="@+id/view_second_b">
+
+                    <Button
+                        android:id="@+id/btn_option8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/corner_shape2"
+                        android:textColor="#ACC1DC"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/ET_option8"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#ACC1DC"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_add_opt8"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/corner_shape3"
+                        android:drawableEnd="@drawable/addmind" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="@+id/view_third_a"
+                    app:layout_constraintStart_toEndOf="@+id/view_third_a"
+                    app:layout_constraintTop_toBottomOf="@+id/view_third_a"
+                    >
+
+                    <Button
+                        android:id="@+id/btn_option9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/corner_shape2"
+                        android:textColor="#ACC1DC"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/ET_option9"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#ACC1DC"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_add_opt9"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/corner_shape3"
+                        android:drawableEnd="@drawable/addmind" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/frameLayout2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="@+id/view_first_a"
+                    app:layout_constraintStart_toStartOf="@+id/view_first_a"
+                    app:layout_constraintTop_toBottomOf="@+id/view_first_a">
+
+                    <Button
+                        android:id="@+id/btn_option5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/corner_shape2"
+                        android:textColor="#ACC1DC"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/ET_option5"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#ACC1DC"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_add_opt5"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/corner_shape3"
+                        android:drawableEnd="@drawable/addmind" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/frameLayout6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="@+id/view_first_b"
+                    app:layout_constraintStart_toStartOf="@+id/view_first_b"
+                    app:layout_constraintTop_toBottomOf="@+id/view_first_b">
+
+                    <Button
+                        android:id="@+id/btn_option6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/corner_shape2"
+                        android:textColor="#ACC1DC"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/ET_option6"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#ACC1DC"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_add_opt6"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/corner_shape3"
+                        android:drawableEnd="@drawable/addmind" />
                 </FrameLayout>
 
 
