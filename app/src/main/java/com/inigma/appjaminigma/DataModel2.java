@@ -1,13 +1,12 @@
 package com.inigma.appjaminigma;
 
-public class DataModel {
+public class DataModel2 {
     private String titleName; //주제이름
     private String category; //카테고리
-    private String explain; //설명
+    private String[] detailGraph; //세부가지
 
-    public DataModel(String title, String explain) {
+    public DataModel2(String title, String explain) {
         this.titleName = title;
-        this.explain = explain;
     }
 
     public String getTitleName() {
@@ -24,13 +23,5 @@ public class DataModel {
 
     public void setCategory(String category) {
         this.category = category;
-    }
-
-    public String getExplain() {
-        return explain;
-    }
-
-    public void setExplain(String explain) {
-        this.explain = explain;
     }
 }

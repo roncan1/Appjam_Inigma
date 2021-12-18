@@ -4,15 +4,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,6 +25,14 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout memoLayout, mindMapLayout;
     // 리스트 프레임 전환 레이아웃
     Button btnMemo, btnMain;
+    // 커스텀 다이얼로그
+    Dialog dialog;
+
+    EditText etTitle, etExplain;
+    CheckBox checkMemo, checkMind;
+
+    ListView mindMapList, memoList;
+    ListItemAdapter memoAdapter, mindAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         setMemoDataList(); // 메모 리스트 세팅
         setMindMapDataList(); // 마인드맵 리스트 세팅
         changeList(); // 프레임 전환
+        setDialog(); // 다이얼로그 세팅
     }
 
     @Override
@@ -54,43 +68,67 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void setMemoDataList() {
-        final String[] DATA_LIST = {"data1", "data2", "data3"};
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, DATA_LIST);
+        memoList = (ListView) findViewById(R.id.MemoList);
 
-        ListView listView = (ListView) findViewById(R.id.MemoList);
-        listView.setAdapter(adapter);
+        memoAdapter = new ListItemAdapter();
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(MainActivity.this, MemoActivity.class);
-                String value = (String) adapter.getItem(i);
-                intent.putExtra("data", value);
-                startActivity(intent);
-
-            }
-        });
+        memoList.setAdapter(memoAdapter);
     }
 
     void setMindMapDataList() {
-        final String[] DATA_LIST = {"data4", "data5", "data6"};
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, DATA_LIST);
+        mindMapList = (ListView) findViewById(R.id.mindMapList);
 
-        ListView listView = (ListView) findViewById(R.id.mindMapList);
-        listView.setAdapter(adapter);
+        mindAdapter = new ListItemAdapter();
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        mindMapList.setAdapter(mindAdapter);
+    }
+
+    void setDialog() {
+        dialog = new Dialog(MainActivity.this);       // Dialog 초기화
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); // 타이틀 제거
+        dialog.setContentView(R.layout.dialog_add_data);             // xml 레이아웃 파일과 연결
+
+        // 버튼: 커스텀 다이얼로그 띄우기
+        findViewById(R.id.btnPopupDialog).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(MainActivity.this, MindMapActivity.class);
-                String value = (String) adapter.getItem(i);
-                intent.putExtra("data", value);
-                startActivity(intent);
-
+            public void onClick(View view) {
+                showCustumDialog(); // 아래 showDialog01() 함수 호출
             }
         });
     }
 
+    public void showCustumDialog(){
+        dialog.show(); // 다이얼로그 띄우기
+        checkMemo = (CheckBox) dialog.findViewById(R.id.checkMemo);
+        checkMind = (CheckBox) dialog.findViewById(R.id.checkMind);
+        etTitle = (EditText) dialog.findViewById(R.id.editTitle);
+        etExplain = (EditText) dialog.findViewById(R.id.editExplain);
+
+        // 취소 버튼
+        Button btnCancel = dialog.findViewById(R.id.btnDialogCancel);
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss(); // 다이얼로그 닫기
+            }
+        });
+
+        // 확인 버튼
+        Button btnConfirm = dialog.findViewById(R.id.btnDialogConfirm);
+        btnConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkMemo.isChecked()) {
+                    memoAdapter.addItem(new DataModel(etTitle.getText().toString(), etExplain.getText().toString()));
+                } else if (checkMind.isChecked()) {
+                    mindAdapter.addItem(new DataModel(etTitle.getText().toString(), etExplain.getText().toString()));
+                }
+                memoList.setAdapter(memoAdapter);
+                mindMapList.setAdapter(mindAdapter);
+                dialog.dismiss();
+            }
+        });
+    }
     void init() {
         memoLayout = (LinearLayout) findViewById(R.id.frameMemo);
         mindMapLayout = (LinearLayout) findViewById(R.id.frameMain);
