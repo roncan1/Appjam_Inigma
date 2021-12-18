@@ -50,7 +50,7 @@
             android:backgroundTint="#00ffffff"
             android:stateListAnimator="@null"
             android:text="MEMO"
-            android:textSize="18dp" />
+            android:textSize="14dp" />
 
         <Button
             android:id="@+id/btnMainMap"
@@ -60,7 +60,7 @@
             android:backgroundTint="#00ffffff"
             android:stateListAnimator="@null"
             android:text="MAIN MAP"
-            android:textSize="18dp" />
+            android:textSize="14dp" />
 
     </LinearLayout>
 
