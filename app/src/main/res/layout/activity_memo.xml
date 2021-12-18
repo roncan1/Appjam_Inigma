@@ -16,16 +16,18 @@
         android:orientation="horizontal">
 
         <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:backgroundTint="#00ffffff" />
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:backgroundTint="#ffffff"
+            android:background="@drawable/backbtn"/>
 
         <TextView
             android:id="@+id/TV_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="사양"
-            android:textSize="25dp"
+            android:textSize="20dp"
             android:textColor="#ffffff"
             android:layout_marginLeft="20dp"/>
     </LinearLayout>

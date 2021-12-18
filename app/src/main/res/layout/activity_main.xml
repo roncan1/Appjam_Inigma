@@ -20,9 +20,13 @@
         app:layout_constraintTop_toTopOf="parent" >
 
         <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:backgroundTint="#00ffffff" />
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="350dp"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="#ffffff"
+            android:background="@drawable/detail" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -31,7 +35,13 @@
         android:layout_marginTop="1dp"
         android:layout_marginBottom="1dp"
         android:layout_weight="9"
-        android:background="#ACC1DC">
+        android:background="#ACC1DC" >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/main_banner" />
+
 
     </LinearLayout>
 
@@ -117,7 +127,9 @@
                 app:layout_constraintHorizontal_bias="0.9"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.95" />
+                app:layout_constraintVertical_bias="0.95"
+                android:background="@drawable/plus_corner_rounds" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
